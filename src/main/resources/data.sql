@@ -1,0 +1,1 @@
+INSERT INTO `todo` (`id`, `done`, `label`) VALUES ('1', b'1', 'Tester la base'), ('2', b'0', 'Implémenter le service')
