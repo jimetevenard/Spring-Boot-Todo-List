@@ -20,4 +20,14 @@ public class TodoResource {
     public List<Todo> allTodo(){
         return service.getAllTodo();
     }
+
+    @GetMapping("/undone")
+    public List<Todo> undoneTodo(){
+        return service.getUndoneTodo();
+    }
+
+    @GetMapping("/undone/count")
+    public int countUndoneTodo(){
+        return service.countUndoneTodo();
+    }
 }
