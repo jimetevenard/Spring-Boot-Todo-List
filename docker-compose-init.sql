@@ -1,0 +1,2 @@
+CREATE TABLE `todo_list_db`.`todo` (`id` BIGINT NOT NULL , `label` VARCHAR(256) NOT NULL , `done` BOOLEAN NOT NULL ) ENGINE = InnoDB;
+INSERT INTO `todo_list_db`.`todo` (`id`, `done`, `label`) VALUES ('1', TRUE, 'Tester avec Docker-compose');
