@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoService {
@@ -20,6 +21,16 @@ public class TodoService {
         return todoRepository.findAll().stream()
                 .map(this::mapEntityToDto)
                 .toList();
+    }
+
+    public Optional<Todo> getTodo(long id){
+        Optional<TodoEntity> optionalTodoEntity = todoRepository.findById(id);
+        
+        if(optionalTodoEntity.isPresent()){
+            return Optional.of(mapEntityToDto(optionalTodoEntity.get()));
+        } else {
+            return Optional.empty();
+        }
     }
 
     public List<Todo> getUndoneTodo(){
